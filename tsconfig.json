@@ -9,7 +9,8 @@
 		"strictNullChecks": false,
 		"strictPropertyInitialization": false,
 		"rootDir": "./webapp",
-		"types": ["@sapui5/types", "@types/qunit"],
+		"types": ["@sapui5/types", "@types/qunit", "jquery"],
+		"allowSyntheticDefaultImports": true,
 		"paths": {
 			"zmock001/*": ["./webapp/*"],
 			"unit/*": ["./webapp/test/unit/*"],

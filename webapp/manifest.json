@@ -4,17 +4,46 @@
 	"sap.app": {
 		"id": "zmock001",
 		"type": "application",
-		"i18n": "i18n/i18n.properties",
-		"title": "{{appTitle}}",
-		"description": "{{appDescription}}",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [
+				""
+			],
+			"fallbackLocale": ""
+		},
 		"applicationVersion": {
 			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"ach": "ach",
+		"resources": "resources.json",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.30.3"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
 		}
 	},
 
 	"sap.ui": {
 		"technology": "UI5",
-		"icons": {},
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
 		"deviceTypes": {
 			"desktop": true,
 			"tablet": true,
@@ -33,8 +62,9 @@
 		"dependencies": {
 			"minUI5Version": "1.120.1",
 			"libs": {
+				"sap.m": {},
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.ui.layout": {}
 			}
 		},
 
@@ -49,32 +79,15 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "zmock001.i18n.i18n"
+					"bundleName": "zmock001.i18n.i18n",
+					"supportedLocales": [
+						""
+					],
+					"fallbackLocale": ""
 				}
-			}
-		},
-
-		"routing": {
-			"config": {
-				"routerClass": "sap.m.routing.Router",
-				"viewType": "XML",
-				"viewPath": "zmock001.view",
-				"controlId": "app",
-				"controlAggregation": "pages",
-				"async": true
 			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "main",
-					"target": "main"
-				}
-			],
-			"targets": {
-				"main": {
-					"viewId": "main",
-					"viewName": "Main"
-				}
+			"": {
+				"dataSource": "mainService"
 			}
 		}
 	}

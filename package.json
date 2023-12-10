@@ -21,6 +21,7 @@
 	},
 	"devDependencies": {
 		"@sapui5/types": "1.120.1",
+		"@types/jquery": "^3.5.29",
 		"@typescript-eslint/eslint-plugin": "^6.7.4",
 		"@typescript-eslint/parser": "^6.7.4",
 		"@ui5/cli": "^3.6.1",
